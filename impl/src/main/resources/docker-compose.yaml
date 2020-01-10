@@ -1,0 +1,15 @@
+version: '3'
+services:
+   apium:
+     image: budtmo/docker-android-real-device
+     network_mode: bridge
+     ports:
+     - 6080
+     - 5554
+     - 5555
+     - 4723
+
+networks:
+  default:
+    external:
+      name: bridge

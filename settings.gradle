@@ -1,0 +1,6 @@
+rootProject.name = 'test-automation-framework'
+
+include 'core' // internal library
+include 'testrail-sync' // the synchronization tool
+include 'testrail-result' // the result upload tool
+include 'impl' // cucumber and geb user files

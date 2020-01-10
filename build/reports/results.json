@@ -1,0 +1,648 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1015574,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseSteps.groovy:9"
+            }
+          }
+        ],
+        "line": 73,
+        "name": "End to End - Creating a order, approving",
+        "description": "",
+        "id": "e2e---order-placement-from-company-app;end-to-end---creating-a-order,-approving;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 59886646,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseSteps.groovy:16"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 18867125476,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 6,
+                "value": "# Company creating the order"
+              }
+            ],
+            "line": 7,
+            "name": "I select the browser \u0027chrome\u0027",
+            "match": {
+              "location": "CommonSteps.groovy:19"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3159225240,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "access to the \u0027https://company-release.zenjob.org/auto\u0027",
+            "match": {
+              "location": "CommonSteps.groovy:24"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1548026161,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I fill email and the password fields with valid data like a store manager",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:41"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 139791663,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I click on the login button",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:33"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2661360056,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Follow the menu to the orders page",
+            "match": {
+              "location": "StepCompanyAppDashboard.groovy:10"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2229177203,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I click new order button",
+            "match": {
+              "location": "StepCompanyAppDashboard.groovy:17"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 216675342,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I am on orders page",
+            "match": {
+              "location": "StepOrders.groovy:22"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 672239037,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I choose location",
+            "match": {
+              "location": "StepOrders.groovy:28"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2984574969,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I fill all fields with valid values",
+            "match": {
+              "location": "StepOrders.groovy:34"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 436725069,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I fill all data for shift details",
+            "match": {
+              "location": "StepOrders.groovy:40"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 790914675,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "In the order creation I click submit button",
+            "match": {
+              "location": "StepOrders.groovy:59"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 367976214,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I make the logout",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:45"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 553932661,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 20,
+                "value": "# Company - approving the new order created"
+              }
+            ],
+            "line": 21,
+            "name": "access to the \u0027https://company-release.zenjob.org/auto\u0027",
+            "match": {
+              "location": "CommonSteps.groovy:24"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1774826428,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I fill email and the password fields with valid data like a global manager",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:51"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 106095110,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I click on the login button",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:33"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1351922802,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Follow the menu to the orders page",
+            "match": {
+              "location": "StepCompanyAppDashboard.groovy:10"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5734276206,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I am approving order",
+            "match": {
+              "location": "StepOrders.groovy:128"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4302113451,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "order become approved",
+            "match": {
+              "location": "StepOrders.groovy:136"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2231429804,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "approval is tracked in activities",
+            "match": {
+              "location": "StepOrders.groovy:143"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 300021292,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "I make the logout",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:45"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1493686371,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 30,
+                "value": "# Ops part"
+              }
+            ],
+            "line": 31,
+            "name": "access to the \u0027https://staging-main.zenjob.org\u0027",
+            "match": {
+              "location": "CommonSteps.groovy:33"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7402434334,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "Created order from company app should display in Order management module of core application",
+            "match": {
+              "location": "LoginOpsSteps.groovy:11"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 19475059446,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "I access to the order where I make click in the button create job to access to start to create the job",
+            "match": {
+              "location": "JobCreation.groovy:14"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14741330529,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "In the detail of the job created, I am starting to set the title and the specials date and times for auto effective",
+            "match": {
+              "location": "JobCreation.groovy:65"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11283121058,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "In the page of the Job Overview, I make click in the botton Start Marching, and click in the popup to accept",
+            "match": {
+              "location": "JobCreation.groovy:31"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 308737981504,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "in the page to match a talent I include the name of the talent and the last name to find the talent",
+            "match": {
+              "location": "JobCreation.groovy:44"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13051549047,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 38,
+                "value": "# Mobile part"
+              }
+            ],
+            "line": 39,
+            "name": "I am accessing android",
+            "match": {
+              "location": "CommonStepsMobile.groovy:20"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3278567956,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "I am in the welcome page and I press the button to go to the login page",
+            "match": {
+              "location": "WelcomeSteps.groovy:8"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15491630040,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "In the login page I make a success login, with a user used for auto effective",
+            "match": {
+              "location": "LoginSteps.groovy:14"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13973407934,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "I am in the Dashboard page and I accept the first job of the list",
+            "match": {
+              "location": "DashboardSteps.groovy:8"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9944059259,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "In the job details page, I make an scroll down and I accept the job",
+            "match": {
+              "location": "JobDetailsSteps.groovy:9"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10709778275,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "In the signature page I make a signature and I press the button accept the job",
+            "match": {
+              "location": "SignatureSteps.groovy:8"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6476771384,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 46,
+                "value": "# Ops part"
+              }
+            ],
+            "line": 47,
+            "name": "I select the browser \u0027chrome\u0027",
+            "match": {
+              "location": "CommonSteps.groovy:19"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1771827883,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "access to the \u0027https://staging-main.zenjob.org\u0027",
+            "match": {
+              "location": "CommonSteps.groovy:33"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2385772597,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "I log into ops dashboard with valid login credentials",
+            "match": {
+              "location": "CommonSteps.groovy:45"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1343910737,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "I click on \"Job Management\" module",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Job Management",
+                  "offset": 12
+                }
+              ],
+              "location": "CommonSteps.groovy:47"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4467637619,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "I go to the Job Details for the job",
+            "match": {
+              "location": "CommonSteps.groovy:52"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10113432656,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "I should see the user in the \u0027Applied\u0027 tab for E2E",
+            "match": {
+              "location": "CommonSteps.groovy:89"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10037687757,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "I book this talent",
+            "match": {
+              "location": "CommonSteps.groovy:73"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6605955398,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 55,
+                "value": "# Company App"
+              }
+            ],
+            "line": 56,
+            "name": "I select the browser \u0027chrome\u0027",
+            "match": {
+              "location": "CommonSteps.groovy:19"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3075746609,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "access to the \u0027https://company-release.zenjob.org/auto\u0027",
+            "match": {
+              "location": "CommonSteps.groovy:24"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1515433241,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "I fill email and the password fields with valid data like a global manager",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:51"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 130776343,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "I click on the login button",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:33"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 32103277535,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "Local temporary automation company app",
+            "match": {
+              "location": "StepCompanyAppLogin.groovy:57"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@wip"
+          },
+          {
+            "line": 3,
+            "name": "@setTimes"
+          }
+        ]
+      }
+    ],
+    "name": "E2E - Order placement from company app",
+    "description": "",
+    "id": "e2e---order-placement-from-company-app",
+    "keyword": "Feature",
+    "uri": "EndToEnd/StateTimesForFinishedShift.feature"
+  }
+]

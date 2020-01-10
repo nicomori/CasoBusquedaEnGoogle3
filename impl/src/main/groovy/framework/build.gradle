@@ -1,0 +1,84 @@
+package framework
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        // if you use the version of cucumber-jvm that the plugin was built with
+        classpath "info.cukes:cucumber-core:1.2.2"
+    }
+}
+
+plugins {
+    id 'groovy'
+}
+
+/*repositories {
+    mavenCentral()
+}
+*/
+ext {
+    groovyVersion = '2.4.12'
+    gebVersion = '2.2'
+
+    cucumberJvmVersion = '1.2.2'
+    chromeDriverVersion = '2.23.0'
+    geckoDriverVersion = '0.18.0'
+
+
+//    appiumClientVersion = '3.2.0'
+//    seleniumVersion = '3.13.0'//'3.2.0'
+
+    appiumClientVersion = '6.0.0'
+
+
+//    appiumClientVersion = '5.0.0-BETA6'
+//    seleniumVersion = '3.6.0'//'3.2.0'
+    seleniumVersion = '3.14.0'//'3.2.0'
+
+}
+
+
+configurations {
+    cucumberRuntime {
+        extendsFrom runtime
+    }
+}
+
+sourceSets {
+    cucumber {
+        // not necessary but nice for IDEa's
+        java
+        resources {
+            srcDir 'src/cucumber'
+        }
+
+        compileClasspath += sourceSets.main.runtimeClasspath
+        // somehow this redeclaration is needed, but should be irrelevant
+        // since runtimeClasspath always expands compileClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+}
+
+dependencies {
+    compile project(':core')
+    compile("io.appium:java-client:$appiumClientVersion")
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+    compile "org.gebish:geb-core:$gebVersion"
+    compile "org.seleniumhq.selenium:selenium-api:$seleniumVersion"
+    compile "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
+    compile "org.testcontainers:selenium:1.7.3"
+    compile "info.cukes:cucumber-core:$cucumberJvmVersion"
+    compile "info.cukes:cucumber-groovy:$cucumberJvmVersion"
+    //compile "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+
+    // for interacting with select elements
+    //compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.141.59'
+
+    compile "org.testcontainers:selenium:1.7.3"
+}

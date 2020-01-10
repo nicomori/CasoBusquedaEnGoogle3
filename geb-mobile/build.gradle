@@ -1,0 +1,161 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        // if you use the version of cucumber-jvm that the plugin was built with
+        classpath "info.cukes:cucumber-core:1.2.2"
+        //classpath 'com.palantir.gradle.docker:gradle-docker:0.20.1'
+        //classpath "com.avast.gradle:gradle-docker-compose-plugin:0.8.13"
+    }
+}
+
+plugins {
+    id 'groovy'
+}
+//apply plugin: 'docker-compose'
+
+ext {
+    groovyVersion = '2.4.12'
+    gebVersion = '2.2'
+    seleniumVersion = '3.13.0'//'3.2.0'
+    cucumberJvmVersion = '1.2.2'
+    chromeDriverVersion = '2.42'
+    geckoDriverVersion = '0.18.0'
+    appiumClientVersion = '5.0.4'
+}
+
+
+configurations {
+    cucumberRuntime {
+        extendsFrom runtime
+    }
+}
+
+task cucumber_droid() {
+    dependsOn assemble, compileJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output
+
+            // Add '--glue' to step definitions and other scripts that should be included in the cucumber runtime.
+            // Arguments without '--glue' should be only the feature files
+            args = ['--plugin',
+
+                    // stdout output to the console
+                    'pretty',
+
+                    // json report
+                    '--plugin', 'json:build/reports/results.json',
+
+                    // junit report
+                    '--plugin', 'junit:build/reports/junit-results.xml',
+
+                    // main script
+                    '--glue', 'src/main/groovy/android/env',
+
+                    // step definitions
+                    '--glue', 'src/cucumber/zenjob/testautomation/stepdefinitions/android',
+                    
+                    // feature files
+                    'src/cucumber/zenjob/testautomation/features/Talent Value stream/Master',
+
+                    // tags to run only specific scenarios ~ to exclude
+                    '--tags', '~@ignore' //, '@smoke', '@regression'
+            ]
+        }
+    }
+}
+
+task cucumber_ios() {
+    dependsOn assemble, compileJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output
+
+            // Add '--glue' to step definitions and other scripts that should be included in the cucumber runtime.
+            // Arguments without '--glue' should be only the feature files
+            args = ['--plugin',
+
+                    // stdout output to the console
+                    'pretty',
+
+                    // json report
+                    '--plugin', 'json:build/reports/results.json',
+
+                    // junit report
+                    '--plugin', 'junit:build/reports/junit-results.xml',
+
+                    // main script
+                    //'--glue', 'impl/src/main/groovy/zenjob/testautomation/env',
+                    // main script
+                    '--glue', 'src/main/groovy/ios/env',
+
+                    // step definitions
+                    '--glue', 'src/cucumber/zenjob/testautomation/stepdefinitions/ios',
+
+                    // feature files
+                    'src/cucumber/zenjob/testautomation/features/Talent Value stream/Master',
+
+                    // tags to run only specific scenarios ~ to exclude
+                    '--tags', '~@ignore' //, '@smoke', '@regression'
+            ]
+        }
+    }
+}
+
+/*dockerCompose {
+    useComposeFiles = ['docker-compose.yaml']
+    waitForTcpPorts = true
+    captureContainersOutput = true
+    removeVolumes = true
+    projectName = UUID.randomUUID()
+    dockerComposeWorkingDirectory = "${projectDir}/src/main/resources/"
+    dockerComposeStopTimeout = java.time.Duration.ofSeconds(20)
+    tcpPortsToIgnoreWhenWaiting = [5554,5555]
+}
+dockerCompose.isRequiredBy(cucumber)
+
+cucumber.doFirst {
+    dockerCompose.exposeAsSystemProperties(test)
+}*/
+
+sourceSets {
+    cucumber {
+        // not necessary but nice for IDEa's
+        java
+        resources {
+            srcDir 'src/cucumber'
+        }
+
+        compileClasspath += sourceSets.main.runtimeClasspath
+        // somehow this redeclaration is needed, but should be irrelevant
+        // since runtimeClasspath always expands compileClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+}
+
+dependencies {
+    compile project(':core')
+    //compile project(':geb-mobile')
+    compile("io.appium:java-client:$appiumClientVersion")
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+    compile "org.gebish:geb-core:$gebVersion"
+    //compile "org.seleniumhq.selenium:selenium-api:$seleniumVersion"
+    //compile "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
+    //compile "org.testcontainers:selenium:1.7.3"
+    compile "info.cukes:cucumber-core:$cucumberJvmVersion"
+    compile "info.cukes:cucumber-groovy:$cucumberJvmVersion"
+    compile "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+    //compile "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
+
+    // for interacting with select elements
+    //compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.141.59'
+    compile "org.seleniumhq.selenium:selenium-remote-driver:$seleniumVersion"
+}

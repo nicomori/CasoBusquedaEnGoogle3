@@ -1,0 +1,36 @@
+version: '3'
+services:
+  # Selenium hub
+  #selenium_hub:
+  #  image: selenium/hub:3.14.0-curium
+#  ports:
+  #  - 4444:4444
+
+  android-emulator:
+     #image: budtmo/docker-android-x86-7.1.1
+     image: butomo1989/docker-android-arm-7.1.1
+     # depends_on:
+     # - selenium_hub
+     #network_mode: bridge
+     #scale: 1
+     #privileged: true
+     #volumes:
+     #- /Users/pascalvanhuffelen/Documents/zenjob-android/app/build/outputs/apk/debug/app-debug.apk:/root/tmp/sample_apk
+     #- ./video-nexus_7.1.1:/tmp/video
+     ports:
+     - 6080:6080
+     - 5554:5554
+     - 5555:5555
+     - 4723:4723
+     environment:
+     - DEVICE="Samsung Galaxy S6"
+     #- CONNECT_TO_GRID=True
+     #- APPIUM=True
+     #- APPIUM_HOST=android-emulator
+     #- SELENIUM_HOST=selenium_hub
+     #- AUTO_RECORD=False
+
+#networks:
+     #  default:
+       #external:
+     # name: bridge

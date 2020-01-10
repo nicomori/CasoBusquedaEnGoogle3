@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="560.100167">
+<testcase classname="E2E - Order placement from company app" name="End to End - Creating a order, approving" time="560.100167">
+<system-out><![CDATA[Given I select the browser 'chrome'.........................................passed
+Then access to the 'https://company-release.zenjob.org/auto'................passed
+When I fill email and the password fields with valid data like a store manager.passed
+And I click on the login button.............................................passed
+Then Follow the menu to the orders page.....................................passed
+When I click new order button...............................................passed
+Then I am on orders page....................................................passed
+And I choose location.......................................................passed
+And I fill all fields with valid values.....................................passed
+And I fill all data for shift details.......................................passed
+And In the order creation I click submit button.............................passed
+Then I make the logout......................................................passed
+Then access to the 'https://company-release.zenjob.org/auto'................passed
+When I fill email and the password fields with valid data like a global manager.passed
+And I click on the login button.............................................passed
+Then Follow the menu to the orders page.....................................passed
+When I am approving order...................................................passed
+Then order become approved..................................................passed
+And approval is tracked in activities.......................................passed
+Then I make the logout......................................................passed
+Then access to the 'https://staging-main.zenjob.org'........................passed
+Then Created order from company app should display in Order management module of core application.passed
+And I access to the order where I make click in the button create job to access to start to create the job.passed
+And In the detail of the job created, I am starting to set the title and the specials date and times for auto effective.passed
+Then In the page of the Job Overview, I make click in the botton Start Marching, and click in the popup to accept.passed
+Then in the page to match a talent I include the name of the talent and the last name to find the talent.passed
+Given I am accessing android................................................passed
+And I am in the welcome page and I press the button to go to the login page.passed
+And In the login page I make a success login, with a user used for auto effective.passed
+Then I am in the Dashboard page and I accept the first job of the list......passed
+Then In the job details page, I make an scroll down and I accept the job....passed
+Then In the signature page I make a signature and I press the button accept the job.passed
+Given I select the browser 'chrome'.........................................passed
+Then access to the 'https://staging-main.zenjob.org'........................passed
+When I log into ops dashboard with valid login credentials..................passed
+And I click on "Job Management" module......................................passed
+And I go to the Job Details for the job.....................................passed
+Then I should see the user in the 'Applied' tab for E2E.....................passed
+When I book this talent.....................................................passed
+Given I select the browser 'chrome'.........................................passed
+Then access to the 'https://company-release.zenjob.org/auto'................passed
+When I fill email and the password fields with valid data like a global manager.passed
+And I click on the login button.............................................passed
+And Local temporary automation company app..................................passed
+]]></system-out>
+</testcase>
+</testsuite>
